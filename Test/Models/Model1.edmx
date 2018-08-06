@@ -35,11 +35,12 @@
   </EntityType>
   <EntityType Name="Users">
     <Key>
-      <PropertyRef Name="Username" />
+      <PropertyRef Name="id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="groupname" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
   <Association Name="FK_DeptEmp">
     <End Role="Depts" Type="CollegeModel.Store.Depts" Multiplicity="1" />
@@ -80,11 +81,12 @@
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
-          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" />
+          <Property Name="groupname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_DeptEmp">
           <End Role="Depts" Type="Self.Dept" Multiplicity="1" />
@@ -137,9 +139,10 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="IsTypeOf(CollegeModel.User)">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="groupname" ColumnName="groupname" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
