@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Visitor/home.aspx" title="Home"  description="">
+        <siteMapNode url="Visitor/subscriberfeatures.aspx" title="Subscriber Features"  description="" />
+        <siteMapNode url="Visitor/publisherfeatures.aspx" title="Publisher Features"  description="" />
+      <siteMapNode url="Visitor/privacypolicy.aspx" title="Privacy Policy"  description="" />
+      <siteMapNode url="Visitor/contactus.aspx" title="Contact Us"  description="" />
+      <siteMapNode url="Visitor/aboutus.aspx" title="About Us"  description="" />
+      <siteMapNode url="Visitor/registration.aspx" title="Registration"  description="" />
+      <siteMapNode url="Visitor/sitemap.aspx" title="Sitemap" description=""/>
+      <siteMapNode url="Visitor/help.aspx" title="Help" description=""/>
+      <siteMapNode url="Visitor/catalogs.aspx" title="Catalogs" description=""/>
+      <siteMapNode url="Visitor/forgotpassword.aspx" title="Forgot Password" description=""/>
+      <siteMapNode url="Visitor/search.aspx" title="Search" description=""/>
+      
+    </siteMapNode>
+</siteMap>

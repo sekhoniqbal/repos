@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Subscriber.master.cs" Inherits="Subscriber_Subscriber" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Template Design by TheWebhub.com | http://www.thewebhub.com | Released for free under a Creative Commons Attribution-Share Alike 3.0 Philippines -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Global Space</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+   <style type="text/css">
+        .style1
+        {
+            width: 148px;
+        }
+       .style2
+       {
+           font-family: "Times New Roman", Times, serif;
+           font-weight: bold;
+       }
+    </style> 
+    </head>
+<body><center>
+<div id="header" style="color:White;font-size:50px;vertical-align:middle" class="style2">
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       Global Space</div>
+        </center>
+<center>
+<table>
+<tr><td colspan="2">
+<div id="menu" align="right">
+	<ul>
+        <li> <a href="~//Subscriberaccount.aspx">My Account </a></li>
+		<li class="first"><a href="Changepassword.aspx">Change Password</a></li>
+		<li class="first"><a href="Editprofile.aspx">Edit Profile</a></li>
+		<li><a href="../home.aspx">Logout</a><li>		
+			   
+	</ul></div>
+</td></tr>
+
+<tr><td colspan="2">
+<div id="navigation" style="height:25px"></div>
+</td></tr>
+
+<tr><td >
+<div id="sidebar">
+			
+		<div style="width:152px;height:200px;margin-top:-50px">			<table>
+					<tr>
+    <td height="270" align="left" style="margin-left:25px" class="style1">
+                                             
+      <a href="../Visitor/search.aspx">Buy Products </a><br />
+      <a href="#">Favourite Products</a><br />
+     <a href="#">Shopping History </a><br />
+                                              
+					  </td>
+                      </tr>
+                      
+					</table>
+	</div>
+					</div>
+</td>
+<td><div style="margin-top:-450px">
+				 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     <p>
+                         </p>
+                 </asp:ContentPlaceHolder></div>
+</td>
+</tr>		
+
+<tr><td colspan="2">
+   
+    <div id="footer">
+</div></td></tr>
+    </table></center>
+</body>
+</html>
+

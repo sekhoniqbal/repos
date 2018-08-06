@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("find", "user", FormMethod.Post)){ 
+        @Html.Label("Enter id of the user")
+        @Html.TextBox("id")
+        @Html.TextBox("Submit" , "Find", new { type="submit"})
+        }
+    </div>
+</body>
+</html>

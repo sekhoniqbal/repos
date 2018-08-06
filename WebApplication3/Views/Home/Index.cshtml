@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("insert", "home", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td>@Html.Label("Enter your name")</td>
+                <td>@Html.TextBox("name")</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Enter your Age")</td>
+                <td>@Html.TextBox("age")</td>
+            </tr>
+            <tr>
+                <td> @Html.RadioButton("Gender", "M")</td>
+                <td><span>Male</span></td>
+            </tr>
+            <tr>
+                <td> @Html.RadioButton("Gender", "F")</td>
+                <td><span>Female</span></td>
+            </tr>
+            <tr><td>@Html.Label("Enter your address")</td></tr>
+            <tr><td>@Html.TextArea("Address")</td></tr>
+            <tr><td>@Html.CheckBox("Accept terms", true)</td></tr>
+            <tr>
+                <td>@Html.Label("Please upload your resume")</td>
+                <td>@Html.TextBox("Resume", "", new { type = "file" })</td>
+            </tr>
+            <tr>
+                <td>@Html.TextBox("Submit", "Submit", new { type = "submit" })</td>
+                <td> @Html.TextBox("Reset", "Reset", new { type = "reset" })</td>
+            </tr>
+
+        </table>
+           
+            
+           
+        }
+    </div>
+</body>
+</html>

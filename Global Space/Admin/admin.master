@@ -1,0 +1,122 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="Admin_admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Global Space</title>
+<script type="text/javascript"  src="ckeditor/ckeditor.js">
+    </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<style type="text/css">
+
+a:link {  color: #FFFFFF; text-decoration: none}
+
+a:visited {  text-decoration: none; color: #FFCC66}
+
+a:hover {  color: #99CCFF; text-decoration: underline}
+body {  font-family: "Arial", "Helvetica", "sans-serif"}
+
+    .style1
+    {
+        color: #65AAC0;
+        font-size: 50px;
+    }
+
+    .style2
+    {
+        font-family: "Times New Roman", Times, serif;
+        font-size: medium;
+    }
+
+    .style3
+    {
+        font-family: "Times New Roman", Times, serif;
+    }
+
+    .style4
+    {
+        color: #000000;
+    }
+
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" link="#FFFFFF">
+<table background="image/top.jpg"  width="900" border="0" cellspacing="0" cellpadding="0" height="75" align="center" >
+<tr><td align="right"><span class="style2"><a href="changepassword.aspx" style="color:#336699;text-decoration:underline">Change Password</a></span>&nbsp;<span 
+        class="style2"><a href="../Visitor/home.aspx" style="color:#336699;text-decoration:underline">Logout</a></span></td></tr> 
+<tr > <td width="980" colspan="2" style="font-family:'Times New Roman', Times, serif; font-weight:bold;color:#336699" >
+    <center class="style1">Global Space</center></td></tr> 
+
+</table>
+<table  border="0" cellspacing="0" cellpadding="0" height="13" background="image/top1.gif" align="center"> 
+<tr> <td><font face="Tahoma"><img src="image/pixel.gif" width="1" height="1"/></font></td></tr>
+<tr><td colspan="2" 
+        style="font-family:'Times New Roman', Times, serif;font-size:24px;color:#FFFFFF; width: 900px" 
+        bgcolor="#65AAC0"><center>Welcome to Admin</center></td></tr> 
+</table><font face="Tahoma"><br> </font><table width="900" border="0" cellspacing="0" cellpadding="0" align="center"> 
+<tr> <td width="215" valign="top"> <table border="0" cellspacing="0" 
+        cellpadding="0" style="width: 215px"> 
+<tr> <td colspan="3" height="28" background="image/menuup.gif"> <div align="center"><font color="#FFFFFF" face="Tahoma"><b>
+  </b></font></div></td></tr> <tr> <td width="12" height="76" background="image/menuleft.gif">
+        &nbsp;</td>
+
+  <td  height="76" style="font-size:14px; background-color:#E4F8FF"> 
+    <p><img height="18" src="image/dot.gif" width="45" class="style4"/><span 
+            class="style3"> </span> <font color="Black"/> <span class="style2"> <a href="managecomments.aspx">
+        <span class="style4">Manage Comments</span></a><br/>
+          <img height="18" src="image/dot.gif" width="45" class="style4"/> <a href="#">
+        <span class="style4">Manage Space</span></a><br/> 
+        <img height="18" src="image/dot.gif" width="45" class="style4"/> <a href="#">
+        <span class="style4">Manage Plans</span></a><br/> 
+        <img height="18" src="image/dot.gif" width="45" class="style4"/> <a href="manageadv.aspx">
+        <span class="style4">Manage Advertisement</span></a><br/> 
+          <img height="18" src="image/dot.gif" width="45" /> <a href="managecatalog.aspx">
+        <span class="style4">Manage Catalogs</span></a><br/>
+		   <img height="18" src="image/dot.gif" width="45"/> <a href="managecategory.aspx">
+        <span class="style4">Manage Category</span></a><br/>
+		    
+			 <img height="18" src="image/dot.gif" width="45"/> <a href="managepublishers.aspx">
+        <span class="style4">Manage Publishers </span> </a>
+        <br/>
+			  <img height="18" src="image/dot.gif" width="45"/> <a href="managesubscribers.aspx">
+        <span class="style4">Manage Subscribers</span></a></span><br/>
+			   <img height="18" src="image/dot.gif" width="45"/><font color="Black"/><font color="Black"/>
+        <span class="style2"> <a href="manageCMS.aspx"><span class="style4">Manage CMS 
+        </span> </a>
+        </span><br/>
+		  </p>
+   </td>
+
+  <td width="12" height="76" background="image/menuright.gif"></td>
+  
+  </tr> 
+ </table>
+  
+
+<table width="215" border="0" cellspacing="0" cellpadding="0"> 
+<tr style="font-size:14px; background-color:#E4F8FF"> <td width="12" height="137" background="image/menuleft.gif">&nbsp;</td>
+<td width="194" height="137">&nbsp;</td><td width="12" height="137" background="image/menuright.gif">&nbsp;</td></tr> </table>
+<table width="215" border="0" cellspacing="0" cellpadding="0"> <tr> 
+</tr> 
+<tr style="font-size:14px; background-color:#E4F8FF"> <td width="12" height="137" background="image/menuleft.gif">&nbsp;</td>
+<td width="194" height="137">&nbsp;</td><td width="12" height="137" background="image/menuright.gif">&nbsp;</td></tr> 
+<tr> <td  style="font-size:14px; background-color:#E4F8FF" colspan="3" height="28" background="image/menudown.gif">&nbsp;
+</td></tr> </table></td>
+<td width="685">
+<asp:ContentPlaceHolder ID="content1" runat="server"></asp:ContentPlaceHolder>
+</td>
+</tr> 
+
+<tr><td colspan="2"></td></tr><tr><td colspan="2"></td></tr>
+<tr><td colspan="2"><table border="0" cellspacing="0" cellpadding="0" height="20" 
+        align="center" style="width: 901px"> 
+<tr bgcolor="#000000"> <td><div style="background-color:#65AAC0; width: 900px;" >
+    <center class="style3">Copyright 
+2011. All Rights Reserved</center></div></td></tr> </table></td></tr></table>
+
+</body>
+</html>

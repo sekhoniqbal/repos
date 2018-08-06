@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+@Model dept
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>create</title>
+</head>
+<body>
+    <div>
+        <h1>Create new</h1>
+        <fieldset>
+            <legend>Department</legend>
+            <form method="post">
+                <div>@Html.Label("Department Name")</div>
+                <div>@Html.TextBox("DName")</div>
+                <div>@Html.Label("HOD")</div>
+                <div>@Html.EditorFor(model=>model.DName) @Html.ValidationMessageFor(model=>model.dname)</div>
+
+                <input type="submit" />
+            </form>
+        </fieldset>
+        @Html.ActionLink("Back to List", "index")
+    </div>
+    </div>
+</body>
+</html>

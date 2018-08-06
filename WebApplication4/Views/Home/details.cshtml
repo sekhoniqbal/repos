@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+@model Dept
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>details</title>
+</head>
+<body>
+    <div>
+        <h1>Detils</h1>
+        <fieldset>
+            <legend>Department</legend>
+            <div>@Html.DisplayNameFor(model => model.Did)</div>
+            <div>@Html.DisplayFor(model => model.Did)</div>
+            <div>@Html.DisplayNameFor(model => model.DName)</div>
+            <div>@Html.DisplayFor(model => model.DName)</div>
+            <div>@Html.DisplayNameFor(model => model.HOD)</div>
+            <div>@Html.DisplayFor(model => model.HOD)</div>
+        </fieldset>
+        @Html.ActionLink("Edit", "edit", new { did = Model.Did })|@Html.ActionLink("Back to List", "index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Visitor.master.cs" Inherits="Visitor_MasterPage" %>
+<%@ Register src="brandsadv.ascx" tagname="brandsadv" tagprefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+<title>Global Space</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+</head>
+<body>
+ <form id="fm" runat="server">
+<div id="main_container">
+	<div class="top_bar">
+    	<div class="top_search">
+        	<%--<div ><p style="text-align:center">No of visitor online:<%=Application["OnlineUsers"].ToString()%></p></div>--%>
+            
+        </div>
+	</div>
+	<div id="header">
+        <div style="float:right">
+         <a href="home.aspx"><input type="button" value="Login" 
+                
+                style="background-color: #36707B; font-family: 'Times New Roman', Times, serif; font-size: medium; color: #FFFFFF;" /></a>&nbsp;&nbsp;
+        <a href="registration.aspx"><input type="button" value="Signup" 
+                
+                style="background-color: #36707B; width: 52px; font-family: 'Times New Roman', Times, serif; font-size: medium; color: #FFFFFF;"/></a></div>
+        <div id="logo"><div id="Div1">
+          <object id="FlashID2" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="162" height="143">
+            <param name="movie" value="images/adriantnt.swf" />
+            <param name="quality" value="high" />
+            <param name="wmode" value="transparent" />
+            <param name="swfversion" value="7.0.70.0" />
+            <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+            <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+            <!--[if !IE]>-->
+            <object type="application/x-shockwave-flash" data="images/adriantnt.swf" width="162" height="143">
+              <!--<![endif]-->
+              <param name="quality" value="high" />ss
+              <param name="wmode" value="transparent" />
+              <param name="swfversion" value="7.0.70.0" />
+              <param name="expressinstall" value="Scripts/expressInstall.swf" />
+              <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+              <div>
+                <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+                <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+              </div>
+              <!--[if !IE]>-->
+            </object>
+            <!--<![endif]-->
+          </object>
+        </div><!-- end of oferte_content--></div>
+        
+        <div class="oferte_content">
+          <div class="oferta">
+            
+       		<div class="oferta_content"><img src="images/Untitled-3.png" alt="" width="547" height="128" /></div>
+       	  </div>
+            <div class="top_divider"><img src="images/header_divider.png" alt="" title="" width="1" height="164" /></div>
+        	
+        </div> <!-- end of oferte_content-->
+        
+ 
+    </div>
+    
+   <div id="main_content"> 
+   
+            <div id="menu_tab">
+            <div class="left_menu_corner"></div>
+                    <ul class="menu">
+                         <li><a href="home.aspx" class="nav1">  Home </a></li>
+                         <li></li>
+                         <li class="divider"></li>
+                         <li><a href="subscriberfeatures.aspx" class="nav4">Subscribers </a></li>
+                         <li class="divider"></li>
+                         <li><a href="publisherfeatures.aspx" class="nav4">Publishers</a></li>
+                         <li class="divider"></li>                         
+                         <li><a href="Catalogs.aspx" class="nav5">Catalogs </a></li>
+                         <li class="divider"></li> 
+						 <li><a href="#" class="nav7">Buy Space</a></li>
+                        <li class="divider"></li>
+                         <li><a href="Help.aspx" class="nav6">Help</a></li>
+                           <li class="divider"></li>
+                         <li><a href="search.aspx" class="nav16">Search</a></li>
+                    </ul>
+ 
+             <div class="right_menu_corner"></div>
+            </div><!-- end of menu tab -->
+            
+    <div class="crumb_navigation">
+     <asp:ContentPlaceHolder ID="contentplaceholder2" runat="server">
+   
+        </asp:ContentPlaceHolder>
+    </div>         
+   <div class="left_content">
+    
+   <div class="title_box">Categories</div>
+
+  <asp:Datalist ID="datalist1" runat="server" Width="196px" DataKeyField="strcategoryname" OnSelectedIndexChanged="datalist1_SelectedIndexChanged" >
+           <ItemStyle BackColor="#DAD0D0" Height="30px"></ItemStyle>
+<ItemTemplate>
+ <image src="images/checked.png"></image>&nbsp;&nbsp;
+ <asp:LinkButton ID="lk" runat="server" CommandName="Select" CausesValidation="false"  ><%# DataBinder.Eval(Container.DataItem,"strcategoryname") %></asp:LinkButton>
+  </ItemTemplate>
+  
+ <SeparatorTemplate></SeparatorTemplate>
+
+<AlternatingItemStyle BackColor="#EEE6E6" Height="30px"></AlternatingItemStyle>
+    
+    <AlternatingItemTemplate>
+    <image src="images/checked.png"></image>&nbsp;&nbsp;
+    <asp:LinkButton ID="lk1" runat="server" CommandName="Select" CausesValidation="false" ><%# DataBinder.Eval(Container.DataItem,"strcategoryname") %></asp:LinkButton>
+    </AlternatingItemTemplate>
+    </asp:Datalist>
+
+      <div class="right_content">
+        <div class="title_box">Catalogs
+          </div>
+          <asp:Datalist ID="datalist2" runat="server" Width="196px" 
+              onselectedindexchanged="datalist2_SelectedIndexChanged" DataKeyField="strcatalogname">
+
+<ItemStyle BackColor="#DAD0D0" Height="30px"></ItemStyle>
+
+    <ItemTemplate>
+   <image src="images/checked.png"></image>&nbsp;&nbsp;
+    <asp:LinkButton ID="lnk1" runat="server" CommandName="Select" CausesValidation="false"  >
+   <%# Eval("strcatalogname") %></asp:LinkButton>
+     </ItemTemplate>
+     <SeparatorTemplate></SeparatorTemplate>
+<AlternatingItemStyle BackColor="#EEE6E6" Height="30px"></AlternatingItemStyle>
+    <AlternatingItemTemplate>
+     <image src="images/checked.png"></image>&nbsp;&nbsp;
+     <asp:LinkButton ID="lnk1" runat="server" CommandName="Select" CausesValidation="false"  >
+   <%# Eval("strcatalogname") %></asp:LinkButton>
+    </AlternatingItemTemplate>
+    </asp:Datalist>
+        
+      </div>
+    <div class="banner_adds" style="float:none">
+     
+       </div>
+
+          
+          
+            
+   </div><!-- end of left content --><!-- end of center content --><!-- end of right content -->   
+   
+            
+   </div><!-- end of main content -->
+   
+   <div style="float:none">
+    
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+           
+       </asp:ContentPlaceHolder>
+   </div>
+  
+   <div><uc1:brandsadv ID="brandsadv1" runat="server" /></div> 
+   <div class="footer">
+  
+ 
+        <div class="left_footer">
+        <img src="images/footer_logo.png" alt="" title="" width="170" height="49"/>
+        </div>
+        
+        <div class="center_footer" style="color:Black">
+        Global Space. All Rights Reserved 2011<br />
+        
+        <img src="images/payment.gif" alt="" title="" />
+        </div>
+        
+        <div class="right_footer" >
+        <a href="home.aspx" style="color:Black">Home</a>
+        <a href="aboutus.aspx" style="color:Black">About Us</a>
+        <a href="sitemap.aspx" style="color:Black">Sitemap</a>
+        <a href="privacypolicy.aspx" style="color:Black">Privacy Policy</a>
+        <a href="contactus.aspx" style="color:Black">Contact Us</a>
+      </div>
+   </div>                 
+ 
+ 
+</div>
+<!-- end of main_container -->
+ </form>
+</body>
+</html>

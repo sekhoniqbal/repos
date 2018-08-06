@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CollegeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Depts">
+          <Key>
+            <PropertyRef Name="Did" />
+          </Key>
+          <Property Name="Did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="HOD" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Emps">
+          <Key>
+            <PropertyRef Name="Eid" />
+          </Key>
+          <Property Name="Eid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Salary" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Dob" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DeptDid" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DeptEmp">
+          <End Role="Depts" Type="Self.Depts" Multiplicity="1" />
+          <End Role="Emps" Type="Self.Emps" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depts">
+              <PropertyRef Name="Did" />
+            </Principal>
+            <Dependent Role="Emps">
+              <PropertyRef Name="DeptDid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CollegeModelStoreContainer">
+          <EntitySet Name="Depts" EntityType="Self.Depts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emps" EntityType="Self.Emps" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DeptEmp" Association="Self.FK_DeptEmp">
+            <End Role="Depts" EntitySet="Depts" />
+            <End Role="Emps" EntitySet="Emps" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CollegeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Dept">
+          <Key>
+            <PropertyRef Name="Did" />
+          </Key>
+          <Property Name="Did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HOD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Emps" Relationship="Self.FK_DeptEmp" FromRole="Depts" ToRole="Emps" />
+        </EntityType>
+        <EntityType Name="Emp">
+          <Key>
+            <PropertyRef Name="Eid" />
+          </Key>
+          <Property Name="Eid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Salary" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dob" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DeptDid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Dept" Relationship="Self.FK_DeptEmp" FromRole="Emps" ToRole="Depts" />
+        </EntityType>
+        <Association Name="FK_DeptEmp">
+          <End Role="Depts" Type="Self.Dept" Multiplicity="1" />
+          <End Role="Emps" Type="Self.Emp" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Depts">
+              <PropertyRef Name="Did" />
+            </Principal>
+            <Dependent Role="Emps">
+              <PropertyRef Name="DeptDid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CollegeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Depts" EntityType="Self.Dept" />
+          <EntitySet Name="Emps" EntityType="Self.Emp" />
+          <AssociationSet Name="FK_DeptEmp" Association="Self.FK_DeptEmp">
+            <End Role="Depts" EntitySet="Depts" />
+            <End Role="Emps" EntitySet="Emps" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CollegeModelStoreContainer" CdmEntityContainer="CollegeEntities">
+          <EntitySetMapping Name="Depts">
+            <EntityTypeMapping TypeName="CollegeModel.Dept">
+              <MappingFragment StoreEntitySet="Depts">
+                <ScalarProperty Name="Did" ColumnName="Did" />
+                <ScalarProperty Name="DName" ColumnName="DName" />
+                <ScalarProperty Name="HOD" ColumnName="HOD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emps">
+            <EntityTypeMapping TypeName="CollegeModel.Emp">
+              <MappingFragment StoreEntitySet="Emps">
+                <ScalarProperty Name="Eid" ColumnName="Eid" />
+                <ScalarProperty Name="EName" ColumnName="EName" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DeptDid" ColumnName="DeptDid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

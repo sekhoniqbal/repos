@@ -1,0 +1,33 @@
+﻿@model WebApplication3.user
+@{
+    Layout = null;
+    // WebApplication3.user obj = (WebApplication3.user)ViewData["test"];
+    var obj = ViewBag.users;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>find</title>
+</head>
+<body>
+    <div>
+
+
+        <p>below is name for the requested id</p>
+        @Html.ValueFor(u => u.name)
+        @Html.ValueFor(u => u.age)
+        @Html.ValueFor(u => u.country)
+        @*@foreach (var item in obj)
+        {
+            <p>name: @item.name </p>
+            <p>Age: @item.age</p>
+        }*@
+
+
+    </div>
+</body>
+</html>
