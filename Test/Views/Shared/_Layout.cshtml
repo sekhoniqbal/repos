@@ -27,9 +27,13 @@
                     {
                     <li>@Html.ActionLink("ViewDept", "Index", "Depts")</li>
                     <li>@Html.ActionLink("ViewEmp", "Index", "Emps")</li>
+                    if (User.IsInRole("admin"))
+                    {
                     <li>@Html.ActionLink("CreateDept", "Create", "Depts")</li>
                     <li>@Html.ActionLink("CreateEmp", "Create", "Emps")</li>
+                    }
                     <li>@Html.ActionLink("Logout", "logout", "Account")</li>
+                    <li><a>Welcome @User.Identity.Name</a></li>
                     }
                     else { <li>@Html.ActionLink("Login", "login", "Account")</li>}
                 </ul>

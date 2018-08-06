@@ -15,7 +15,7 @@ namespace Test.Controllers
         private CollegeEntities db = new CollegeEntities();
 
         // GET: Depts
-        [Authorize]    //authorize keyword forces to authenticate user before giving them access to this acction
+        [Authorize(Roles ="admin, viewer")]    //authorize keyword forces to authenticate user before giving them access to this acction
         public ActionResult Index()
         {
             return View(db.Depts.ToList());
@@ -37,7 +37,7 @@ namespace Test.Controllers
         }
 
         // GET: Depts/Create
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,7 +46,7 @@ namespace Test.Controllers
         // POST: Depts/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        [Authorize(Roles ="admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Did,DName,HOD")] Dept dept)

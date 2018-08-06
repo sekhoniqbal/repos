@@ -45,7 +45,7 @@ namespace Test.Controllers
         public ActionResult create()
         {
             CollegeEntities db = new CollegeEntities();
-            User a = new User() { Username = "iqbal", Password = "singh", GroupName = "admin" };
+            User a = new User() { Username = "pargat", Password = "singh", GroupName = "viewer" };
             db.Users.Add(a);
             db.SaveChanges();
             return Content("success");

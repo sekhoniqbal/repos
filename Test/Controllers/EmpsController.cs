@@ -15,7 +15,7 @@ namespace Test.Controllers
         private CollegeEntities db = new CollegeEntities();
 
         // GET: Emps
-        [Authorize]    //authorize keyword forces to authenticate user before giving them access to this acction
+        [Authorize(Roles = "admin, viewer")]    //authorize keyword forces to authenticate user before giving them access to this acction
         public ActionResult Index()
         {
             var emps = db.Emps.Include(e => e.Dept);
@@ -38,7 +38,7 @@ namespace Test.Controllers
         }
 
         // GET: Emps/Create
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             ViewBag.DeptDid = new SelectList(db.Depts, "Did", "DName");
@@ -50,7 +50,7 @@ namespace Test.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
+        [Authorize(Roles = "admin")]
         public ActionResult Create([Bind(Include = "Eid,EName,Salary,Dob,Gender,DeptDid")] Emp emp)
         {
             if (ModelState.IsValid)
