@@ -41,6 +41,15 @@ namespace Test.Controllers
             TempData["Msg"] = "You have been logged out successfully";
             return RedirectToAction("index", "home");
         }
+        [AllowAnonymous]
+        public ActionResult create()
+        {
+            CollegeEntities db = new CollegeEntities();
+            User a = new User() { Username = "iqbal", Password = "singh", GroupName = "admin" };
+            db.Users.Add(a);
+            db.SaveChanges();
+            return Content("success");
+        }
 
     }
 }

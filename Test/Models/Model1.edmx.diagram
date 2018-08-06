@@ -7,8 +7,8 @@
       <Diagram DiagramId="83d9fb68b84840a9841a20b4155d4bcd" Name="Diagram1">
         <EntityTypeShape EntityType="CollegeModel.Dept" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CollegeModel.Emp" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="CollegeModel.User" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="CollegeModel.FK_DeptEmp" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CollegeModel.User" Width="1.5" PointX="6.125" PointY="2.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

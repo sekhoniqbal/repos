@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/06/2018 01:45:19
+-- Date Created: 08/06/2018 02:16:23
 -- Generated from EDMX file: C:\Users\sekho\source\repos\Test\Models\Model1.edmx
 -- --------------------------------------------------
 
@@ -31,9 +31,6 @@ GO
 IF OBJECT_ID(N'[dbo].[Emps]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Emps];
 GO
-IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Users];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -60,10 +57,10 @@ GO
 
 -- Creating table 'Users'
 CREATE TABLE [dbo].[Users] (
-    [id] int IDENTITY(1,1) NOT NULL,
-    [username] varchar(50)  NULL,
-    [password] nvarchar(max)  NULL,
-    [groupname] varchar(50)  NULL
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Username] nvarchar(max)  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL,
+    [GroupName] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -83,10 +80,10 @@ ADD CONSTRAINT [PK_Emps]
     PRIMARY KEY CLUSTERED ([Eid] ASC);
 GO
 
--- Creating primary key on [id] in table 'Users'
+-- Creating primary key on [Id] in table 'Users'
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [PK_Users]
-    PRIMARY KEY CLUSTERED ([id] ASC);
+    PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
 -- --------------------------------------------------
