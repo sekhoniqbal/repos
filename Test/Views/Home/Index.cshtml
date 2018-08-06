@@ -1,8 +1,15 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    Layout = "/views/shared/_layout.cshtml";
 }
 
 <h2>Index</h2>
 <h4>@TempData["Msg"]</h4>
+
+Current time is <div id="test-time">@ViewBag.time</div>
+@Ajax.ActionLink("update time", "ajax", 
+    new AjaxOptions (){ HttpMethod = "GET", UpdateTargetId = "test-time", InsertionMode = InsertionMode.Replace })
+
+
 

@@ -16,3 +16,8 @@ textarea {
     max-width: 280px;
 }
 
+#pview{
+    background:red;
+    height:100px;
+}
+

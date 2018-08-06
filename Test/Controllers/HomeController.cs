@@ -12,7 +12,14 @@ namespace Test.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            ViewBag.time = DateTime.Now;
             return View();
+        }
+        [AllowAnonymous]
+        public PartialViewResult ajax()
+        {
+            ViewBag.time = DateTime.Now.ToString();
+            return PartialView();
         }
     }
 }
